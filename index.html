@@ -4,76 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Name — 3D Animator & Artist</title>
-  <meta name="description" content="Portfolio website for a 3D animator & artist with interactive 3D showcase.">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header fade-in">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="logo">Your&nbsp;Name</div>
     <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#demo-reel">Demo Reel</a>
+      <a href="#video-slots">Video Slots</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SPLIT -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-text slide-up">
+    <div class="hero-text">
       <h1>Animation<br>that feels alive.</h1>
-      <p>
-        I’m a 3D animator and artist creating expressive motion for games, film, and interactive experiences.  
-        Upload your own <strong>.glb / .gltf / .fbx</strong> to the viewer →  
-      </p>
+      <p>I create motion for games, film, and immersive experiences.  
+      Upload a <strong>.glb / .gltf / .fbx</strong> on the right.</p>
       <label class="file-btn">
         <input id="file" type="file" accept=".glb,.gltf,.fbx" />
-        <span>Upload 3D&nbsp;File</span>
+        <span>Upload 3D File</span>
       </label>
     </div>
-    <div class="hero-visual fade-in">
+    <div class="hero-visual">
       <canvas id="c"></canvas>
       <div id="drop" class="drop-hint">Drop a 3D file here</div>
     </div>
   </section>
 
-  <!-- WORK GRID -->
-  <section id="work" class="grid">
-    <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1600&auto=format&fit=crop" alt="">
-      <h3>Mech Study</h3>
-      <p>Hard-surface rig & walk cycle.</p>
-    </article>
-    <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1600&auto=format&fit=crop" alt="">
-      <h3>Creature Sprint</h3>
-      <p>Quadruped run with secondary motion.</p>
-    </article>
-    <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" alt="">
-      <h3>Stylized Character</h3>
-      <p>Facial rig + phoneme set.</p>
-    </article>
+  <!-- WORKS -->
+  <section id="works" class="panel">
+    <h2>Works</h2>
+    <div class="grid">
+      <article class="card reveal"><img src="img1.jpg"><h3>Mech Rig</h3></article>
+      <article class="card reveal"><img src="img2.jpg"><h3>Creature Sprint</h3></article>
+      <article class="card reveal"><img src="img3.jpg"><h3>Stylized Character</h3></article>
+    </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about reveal">
-    <h2>About</h2>
-    <p>
-      I’m a Brisbane-based animator focused on expressive motion and realtime pipelines.  
-      Comfortable across Maya, Blender, Unreal, Unity, and custom rigging workflows.
-    </p>
+  <!-- DEMO REEL -->
+  <section id="demo-reel" class="panel dark">
+    <h2>Demo Reel</h2>
+    <video controls autoplay muted loop>
+      <source src="demo-reel.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- VIDEO SLOTS -->
+  <section id="video-slots" class="panel">
+    <h2>Video Slots</h2>
+    <p>Book a slot to collaborate or request a custom animation preview.</p>
+    <button class="cta">Reserve Slot</button>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact reveal">
+  <section id="contact" class="panel dark">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:you@yourdomain.com">you@yourdomain.com</a></p>
-    <p>Instagram / ArtStation / LinkedIn</p>
+    <p>Instagram · ArtStation · LinkedIn</p>
   </section>
 
-  <footer class="site-footer fade-in">
-    © <span id="year"></span> Your Name
-  </footer>
+  <footer class="site-footer">© <span id="year"></span> Your Name</footer>
 
   <!-- Scripts -->
   <script type="module" src="main.js"></script>
