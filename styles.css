@@ -132,3 +132,17 @@ body {
   .hero-text { padding: 40px 20px; }
   .grid, .about, .contact, .site-header { padding: 24px; }
 }
+
+/* --- ANIMATIONS --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+}
