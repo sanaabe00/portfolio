@@ -3,112 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>3D Animator & Artist — Portfolio</title>
-  <meta name="description" content="Portfolio website for a 3D animator & artist with an interactive WebGL viewer.">
-  <link rel="preconnect" href="https://unpkg.com">
+  <title>Sanaa Bat-Erdene — 3D Animator & Artist</title>
+  <meta name="description" content="Portfolio website for a 3D animator & artist with interactive 3D showcase.">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="site">
-    <!-- LEFT: brand + text content -->
-    <aside class="sidebar">
-      <header class="brand">
-        <h1 class="logo">Your&nbsp;Name</h1>
-        <p class="tag">3D Animator · Technical Artist</p>
-      </header>
+  <header class="site-header">
+    <div class="logo">Your&nbsp;Name</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <nav class="nav">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
+  <!-- HERO SPLIT -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Animation<br>that feels alive.</h1>
+      <p>
+        I’m a 3D animator and artist creating expressive motion for games, film, and interactive experiences.  
+        Upload your own <strong>.glb / .gltf / .fbx</strong> to the viewer →  
+      </p>
+      <label class="file-btn">
+        <input id="file" type="file" accept=".glb,.gltf,.fbx" />
+        <span>Upload 3D&nbsp;File</span>
+      </label>
+    </div>
+    <div class="hero-visual">
+      <canvas id="c"></canvas>
+      <div id="drop" class="drop-hint">Drop a 3D file here</div>
+    </div>
+  </section>
 
-      <section class="hero">
-        <h2>Crafting motion that feels alive.</h2>
-        <p>
-          I animate characters, creatures, and props for games and film.
-          Drop your own <strong>.glb/.gltf/.fbx</strong> on the right to test the viewer,
-          or explore the selected works below.
-        </p>
-        <ul class="badges">
-          <li>Keyframe · Mocap cleanup</li>
-          <li>Rigging · Retargeting</li>
-          <li>Real‑time pipelines</li>
-        </ul>
-      </section>
+  <!-- WORK GRID -->
+  <section id="work" class="grid">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1600&auto=format&fit=crop" alt="">
+      <h3>Mech Study</h3>
+      <p>Hard-surface rig & walk cycle.</p>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1600&auto=format&fit=crop" alt="">
+      <h3>Creature Sprint</h3>
+      <p>Quadruped run with secondary motion.</p>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" alt="">
+      <h3>Stylized Character</h3>
+      <p>Facial rig + phoneme set.</p>
+    </article>
+  </section>
 
-      <footer class="credits">
-        <small>© <span id="year"></span> Sanaa. All rights reserved.</small>
-      </footer>
-    </aside>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>
+      I’m a Brisbane-based 3d animator focused on expressive motion and realtime pipelines.  
+      Comfortable across Maya, Blender, Unreal, Unity, and custom rigging workflows.
+    </p>
+  </section>
 
-    <!-- RIGHT: interactive viewer -->
-    <main class="stage">
-      <!-- Controls overlay -->
-      <div class="ui">
-        <label class="file-btn">
-          <input id="file" type="file" accept=".glb,.gltf,.fbx" />
-          <span>Upload 3D&nbsp;File</span>
-        </label>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@yourdomain.com">you@yourdomain.com</a></p>
+    <p>Instagram / ArtStation / LinkedIn</p>
+  </section>
 
-        <button id="btnReset" title="Reset camera">Reset</button>
-        <label class="chk"><input id="chkAuto" type="checkbox" checked /> Auto‑rotate</label>
-        <label class="chk"><input id="chkGrid" type="checkbox" checked /> Grid</label>
-        <label class="chk"><input id="chkShadow" type="checkbox" checked /> Shadows</label>
-        <label class="range">
-          Env Intensity
-          <input id="envRange" type="range" min="0" max="2" step="0.1" value="1">
-        </label>
-      </div>
+  <footer class="site-footer">
+    © <span id="year"></span> Sanaa
+  </footer>
 
-      <!-- Drop zone + canvas holder -->
-      <div id="drop" class="drop">
-        <canvas id="c"></canvas>
-        <div class="drop-hint">
-          <strong>Drop .glb / .gltf / .fbx</strong>
-          <span>or click “Upload 3D File”</span>
-        </div>
-      </div>
-
-      <!-- Minimal work grid (optional showcase) -->
-      <section id="work" class="grid">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1600&auto=format&fit=crop" alt="Robot concept still">
-          <h3>Mech Study</h3>
-          <p>Hard‑surface rig & walk cycle.</p>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1600&auto=format&fit=crop" alt="Creature design still">
-          <h3>Creature Sprint</h3>
-          <p>Quadruped run with secondary motion.</p>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" alt="Stylized character">
-          <h3>Stylized Character</h3>
-          <p>Facial rig + phoneme set.</p>
-        </article>
-      </section>
-
-      <section id="about" class="about">
-        <h2>About</h2>
-        <p>
-          I’m a Brisbane‑based 3d animator focused on expressive motion and robust
-          realtime pipelines. Comfortable across Maya, Blender and Unreal.
-        </p>
-      </section>
-
-      <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:you@yourdomain.com">sanaa.bat@gmail.com</a></p>
-        <p>Instagram / ArtStation / LinkedIn</p>
-      </section>
-    </main>
-  </div>
-
-  <!-- Three.js & app -->
   <script type="module" src="main.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
